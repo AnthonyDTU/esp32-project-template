@@ -1,0 +1,35 @@
+{
+	"name": "Antons ESP Image",
+	"image": "antonlage/espimage",
+	"privileged": true,
+	"runArgs": [
+		"--rm"
+	],
+	"mounts": [
+		"source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+		"source=/dev/bus/usb,target=/dev/bus/usb,type=bind,consistency=cached",
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/root/.ssh,type=bind,consistency=cached",
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.gitconfig,target=/root/.gitconfig,type=bind,consistency=cached"
+	],
+	"workspaceFolder": "/workspace",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				// "mcu-debug.debug-tracker-vscode",
+				// "ms-vscode.cpptools",
+				// "marus25.cortex-debug",
+				// "asciidoctor.asciidoctor-vscode",
+				// "ivory-lab.jenkinsfile-support",
+				// "qhoekman.language-plantuml",
+				// "jebbs.plantuml",
+				// "cschlosser.doxdocgen",
+				// "vscode-icons-team.vscode-icons",
+				// "natqe.reload",
+				// "mhutchie.git-graph",
+				// "actboy168.tasks"
+				"platformio.platformio-ide",
+				"jebbs.plantuml"
+			]
+		}
+	}
+}
