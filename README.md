@@ -1,6 +1,16 @@
 # esp32-project-template <!-- omit in toc -->
 
-## Table of contents 
+
+## Table of Contents
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [Prerequisites](#prerequisites)
+- [Using this template to create a new project](#using-this-template-to-create-a-new-project)
+- [Using Docker](#using-docker)
+  - [Fork this repo to the Linux filesystem](#fork-this-repo-to-the-linux-filesystem)
+  - [Attach the USB device to WSL](#attach-the-usb-device-to-wsl)
+  - [Opening the repo in a dev container](#opening-the-repo-in-a-dev-container)
+- [Resources](#resources)
 
 
 
@@ -42,13 +52,22 @@ https://www.docker.com/products/docker-desktop/
 
 
 
-## Creating a new project from this template
+## Using this template to create a new project
+Another Esp project... alright, lets do it
+
+To begin with, I have to try this myself, so this section will be written a little later.
+
+
+***GLHF!***
 
 
 
 
 
 ## Using Docker
+
+
+
 
 This repo is designed to be opened in a **Dev Container**. However, there ary some steps that needs to be taken, to ensure functionallity and optimal performance.
 

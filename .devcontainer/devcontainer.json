@@ -1,6 +1,7 @@
 {
 	"name": "esp32-template-project",
-	"image": "antonlage/espimage",
+	"build": { "dockerfile": "Dockerfile" },
+	// "image": "antonlage/espimage",
 	"privileged": true,
 	// "runArgs": [
 	// 	"--rm"
@@ -16,7 +17,7 @@
 		"vscode": {
 			"extensions": [
 				// "mcu-debug.debug-tracker-vscode",
-				// "ms-vscode.cpptools",
+				"ms-vscode.cpptools",
 				// "marus25.cortex-debug",
 				// "asciidoctor.asciidoctor-vscode",
 				// "ivory-lab.jenkinsfile-support",
