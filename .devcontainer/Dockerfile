@@ -49,44 +49,17 @@ RUN apt update && apt upgrade -y && \
     gem install asciidoctor-diagram -v ${ASCIIDOCTOR_DIAGRAM_VERSION} && \
     apt clean
 
-# RUN curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o /root/.git-completion.bash && \
-#     echo '' && \
-#     echo 'if [ -f ~/.git-completion.bash ]; then' >> /root/.bashrc && \
-#     echo '  . ~/.git-completion.bash' >> /root/.bashrc && \
-#     echo 'fi' >> /root/.bashrc && \
-#     echo ''
 
-
-# Installing Python
+# Installing Python, and making shure it can be used by PlatformIO
 RUN apt update && \
     apt-get install python3-venv -y
 
-    
+# # Installing PlatformIO
+# RUN   mkdir -p /usr/local/bin && \ 
+#       ln -s ~/.platformio/penv/bin/platformio /usr/local/bin/platformio && \
+#       ln -s ~/.platformio/penv/bin/pio /usr/local/bin/pio && \
+#       ln -s ~/.platformio/penv/bin/piodebuggdb /usr/local/bin/piodebuggdb
 
-# Installing PlatformIO
-RUN   mkdir -p /usr/local/bin && \ 
-      ln -s ~/.platformio/penv/bin/platformio /usr/local/bin/platformio && \
-      ln -s ~/.platformio/penv/bin/pio /usr/local/bin/pio && \
-      ln -s ~/.platformio/penv/bin/piodebuggdb /usr/local/bin/piodebuggdb
+# EXPOSE 5000
 
-# install VS Code (code-server)
-# RUN curl -fsSL https://code-server.dev/install.sh | sh
-
-# # install VS Code extensions
-# RUN code --install-extension platformio.platformio-ide && \
-#     code --install-extension thecreativedodo.usbip-connect && \
-#     code --install-extension ms-vscode.cpptools
-
-
-EXPOSE 5000
-
-# COPY installExtensions.sh /
-# RUN chmod +x /installExtensions.sh
-# ENTRYPOINT [ "/installExtensions.sh" ]
-# CMD [ "sleep", "infinity" ]
-
-
-# ENTRYPOINT [ "/.vscode/installExtensions.sh" ]
-
-# # ENTRYPOINT [ "/docker-entrypoint.sh" ]
 CMD [ "sleep", "infinity" ]
