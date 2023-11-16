@@ -1,10 +1,10 @@
 {
-	"name": "Antons ESP Image",
+	"name": "esp32-template-project",
 	"image": "antonlage/espimage",
 	"privileged": true,
-	"runArgs": [
-		"--rm"
-	],
+	// "runArgs": [
+	// 	"--rm"
+	// ],
 	"mounts": [
 		"source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
 		"source=/dev/bus/usb,target=/dev/bus/usb,type=bind,consistency=cached",
@@ -28,7 +28,8 @@
 				// "mhutchie.git-graph",
 				// "actboy168.tasks"
 				"platformio.platformio-ide",
-				"jebbs.plantuml"
+				"jebbs.plantuml",
+				"yzhang.markdown-all-in-one"
 			]
 		}
 	}

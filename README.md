@@ -1,36 +1,57 @@
-# esp32-project-template
+# esp32-project-template <!-- omit in toc -->
+
+## Table of contents 
+
+
 
 ## Overview
 This project serves as a template for a project, in which an ESP32 platform is to be used. This guide will guide the users thorugh how to open the project in a docker container, how to pass in a COM-port, and any other ting, which might be relevant.
 
-## Docker Guide
+## Prerequisites
+For this to work, it is nessesary to have a few tools installed. How to install these things will all be described here.
+- **Visual Studio Code**   
+https://code.visualstudio.com/download
+
+- **Visual Studio Remote Extensions Pack**  
+https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack
+
+
+- **Docker Desktop**    
+https://www.docker.com/products/docker-desktop/
+
+- **WSL2 & Ubuntu**
+
+    Open Windows PowerShell, and type 
+
+    >       wsl --install
+
+    This will install wsl, and the default Linux distribution, which is Ubuntu.
+- **Usbipd**    
+
+    This will have to be insatlled in both Windows and WSL. 
+
+    In PowerShell, run the following command: 
+    >       winget install --interactive --exact dorssel.usbipd-win    
+
+    In WSL, run the following commands:
+
+    >       sudo apt install linux-tools-generic hwdata
+    >       sudo update-alternatives --install /usr/local/bin/usbip usbip /usr/lib/linux-tools/*-generic/usbip 20
+      
+
+
+
+
+## Creating a new project from this template
+
+
+
+
+
+## Using Docker
 
 This repo is designed to be opened in a **Dev Container**. However, there ary some steps that needs to be taken, to ensure functionallity and optimal performance.
 
-### Install and setup WSL2
-Open Windows PowerShell, and type 
-```console
-wsl --install
-```
-
-Alternatively, this can also be done via the Microsoft Store, where both Windows Subsystem for Linux and Ubuntu 22.04 can be installed.
-
-For a more in depth guide, see: 
-https://learn.microsoft.com/en-us/windows/wsl/install
-
-### Install Usbipd
-This will have to be done in both Windows and WSL. 
-
-In PowerShell, run the following command: 
-```console
-winget install --interactive --exact dorssel.usbipd-win
-```
-
-In WSL, run the following commands:
-```console
-sudo apt install linux-tools-generic hwdata
-sudo update-alternatives --install /usr/local/bin/usbip usbip /usr/lib/linux-tools/*-generic/usbip 20
-```
 
 
 
@@ -91,3 +112,12 @@ If no such message box appears, click **ctrl+shift+space**. This will open a dro
 Either of these things will do the same, and reopen the project in a Docker Container. To verify that it worked,  the blue bar should now be saying "Dev Container: *Project Name*"
 
 Once the Dev Container has been opened, VSCode should automatically install all nessesary extensions. 
+
+
+## Resources
+- WSL installation guide:   
+https://learn.microsoft.com/en-us/windows/wsl/install
+
+
+- Usbipd intallation and usage guide    
+https://learn.microsoft.com/en-us/windows/wsl/connect-usb
