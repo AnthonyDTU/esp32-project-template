@@ -1,6 +1,5 @@
 # esp32-project-template <!-- omit in toc -->
 
-
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
 - [Overview](#overview)
@@ -71,7 +70,6 @@ First of all, the name of the devcontainer should be changed to reflect the proj
 "name": "esp32-template-project",
 ```
 
-
 Then, if other extensions are desired and/or needed, these can be added to the JSON block shown below, which is found in the devcontainer.json file.
 
 ```json
@@ -91,9 +89,6 @@ All the extension specified here will automatically be installed, when the conta
 The PlatformIO configuration might also need to be updated, to reflect the specific platform and framework used in this project. This is done in the platformio.ini file. Here, platform and framework information, programming and monitoring configurations, build options, library dependencies and other things can be specified. It is also possible to write multiple configurations, which all builds ontop of a base configuration, for easy switching between different run modes.
 
 For more information and examples, see PlatformIO's own documentation, a link to which can be found in the references at the buttom of this document.
-
-
-
 
 ## Using Docker
 
@@ -129,7 +124,7 @@ BUSID  VID:PID    DEVICE                                                        
 $ usbipd wsl attach --busid 1-2 -a
 ```
 
-To verify that the COM-port has been forwarded into WSL, navigate to the ***/dev*** folder in the WSL terminal and type in ```ls ttyUSB0*```:
+To verify that the COM-port has been forwarded into WSL, navigate to the ***/dev*** folder in the WSL terminal and type in ```ls ttyUSB*```:
 
 ```console
 /dev$ ls ttyUSB*
@@ -158,14 +153,9 @@ If it is the first time you open the folder in a Dev Container, the container ha
 
 When reopening a recent project, you can right click the VSCode icon, and then select the repo in WSL. You cannot directly reopen the project in a Dev Container, since this will not pass through the COM-port.
 
-
-
-
-
 ## Resources
 - WSL installation guide:   
 https://learn.microsoft.com/en-us/windows/wsl/install
-
 
 - Usbipd intallation and usage guide:    
 https://learn.microsoft.com/en-us/windows/wsl/connect-usb
