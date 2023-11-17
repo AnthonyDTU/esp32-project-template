@@ -2,9 +2,10 @@
 	"name": "esp32-template-project",
 	"build": { "dockerfile": "Dockerfile" },
 	"privileged": true,
-	// "runArgs": [
+	"runArgs": [
+		"--name", "esp32Project"
 	// 	"--rm"
-	// ],
+	],
 	"mounts": [
 		"source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
 		"source=/dev/bus/usb,target=/dev/bus/usb,type=bind,consistency=cached",
