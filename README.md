@@ -18,11 +18,11 @@
 
 ## Overview
 
-This project serves as a template for a project, in which an ESP32 platform is to be used. This guide will guide the users thorugh how to open the project in a docker container, how to pass in a COM-port, and any other ting, which might be relevant.
+This project serves as a template for a project, in which an ESP32 platform is to be used. This guide will guide the users trough how to install the nessesary tools, clone the project into WSL, pass a COM-port to the container and open the project in a Docker Dev Container.
 
 ## Prerequisites
 
-For this to work, it is nessesary to have a few tools installed. How to install these things will all be described here.
+For it all to work, it is nessesary to have a few tools installed. How to install these will all be described here:
 
 - **Visual Studio Code**  
 https://code.visualstudio.com/download
@@ -90,7 +90,7 @@ All the extension specified here will automatically be installed, when the conta
 
 The PlatformIO configuration might also need to be updated, to reflect the specific platform and framework used in this project. This is done in the platformio.ini file. Here, platform and framework information, programming and monitoring configurations, build options, library dependencies and other things can be specified. It is also possible to write multiple configurations, which all builds ontop of a base configuration, for easy switching between different run modes.
 
-For more information and examples, see PlatformIO's own documentation: https://docs.platformio.org/en/latest/projectconf/index.html
+For more information and examples, see PlatformIO's own documentation, a link to which can be found in the references at the buttom of this document.
 
 
 
@@ -129,18 +129,15 @@ BUSID  VID:PID    DEVICE                                                        
 $ usbipd wsl attach --busid 1-2 -a
 ```
 
-To verify that the COM-port has been forwarded into WSL, navigate to the ***/dev*** folder in the WSL terminal and type in ```ls tty*```:
+To verify that the COM-port has been forwarded into WSL, navigate to the ***/dev*** folder in the WSL terminal and type in ```ls ttyUSB0*```:
 
 ```console
-/dev$ ls tty*
-tty    tty12  tty17  tty21  tty26  tty30  tty35  tty4   tty44  tty49  tty53  tty58  tty62  ttyS0
-tty0   tty13  tty18  tty22  tty27  tty31  tty36  tty40  tty45  tty5   tty54  tty59  tty63  ttyS1
-tty1   tty14  tty19  tty23  tty28  tty32  tty37  tty41  tty46  tty50  tty55  tty6   tty7   ttyS2
-tty10  tty15  tty2   tty24  tty29  tty33  tty38  tty42  tty47  tty51  tty56  tty60  tty8   ttyS3
-tty11  tty16  tty20  tty25  tty3   tty34  tty39  tty43  tty48  tty52  tty57  tty61  tty9   ttyUSB0
+/dev$ ls ttyUSB*
+ttyUSB0
 ```
 
-This will print something like the above example. If the one called ***ttyUSB0*** is present, the COM-port is activly passed into WSL.
+This will print something like in the above example. If the one called ***ttyUSB0*** is present, the COM-port is activly passed into WSL, and everything should work. If the console outputs that there is no such file or directory, try closing the WSL, disconnect the ESP, and try the process again. 
+
 #### Troubleshooting
 
 The usbipd might complain, that the device needs to be force binded (check the actual message). In this case, PowerShell needs to be closed and reopened as Administrator. When in adminstrator mode, the following command can be used to solve the issue:
