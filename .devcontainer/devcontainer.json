@@ -1,7 +1,6 @@
 {
 	"name": "esp32-template-project",
 	"build": { "dockerfile": "Dockerfile" },
-	// "image": "antonlage/espimage",
 	"privileged": true,
 	// "runArgs": [
 	// 	"--rm"
@@ -16,21 +15,17 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				// "mcu-debug.debug-tracker-vscode",
 				"platformio.platformio-ide",				
 				"ms-azuretools.vscode-docker",
 				"ms-vscode.cpptools",
-				// "marus25.cortex-debug",
 				"asciidoctor.asciidoctor-vscode",
-				// "ivory-lab.jenkinsfile-support",
-				// "cschlosser.doxdocgen",
-				// "vscode-icons-team.vscode-icons",
-				// "actboy168.tasks"
 				"mhutchie.git-graph",
 				"jebbs.plantuml",
 				"qhoekman.language-plantuml",
 				"yzhang.markdown-all-in-one",
-				"natqe.reload"
+				"natqe.reload",
+				"cschlosser.doxdocgen",
+				"vscode-icons-team.vscode-icons"
 			]
 		}
 	}
