@@ -64,10 +64,13 @@ A few configuration should be made when first creating the project. This include
 
 To begin with, some configurations should be made to the *.devcontainer/devcontainer.json* file. This is the file which holds the configuration for which docker image is used, which extensions is installed in VSCode, and what the name of the container/workspace will be.
 
-First of all, the name of the devcontainer should be changed to reflect the project name. Per default it is set as *esp32-template-project*, but this should be changed.
+First of all, the name of the devcontainer should be changed to reflect the project name. Per default it is set as *esp32-template-project*, but this should be changed. Remember to change it in both the ***name*** parameter and the ***runArgs*** parameter.
 
 ```json
 "name": "esp32-template-project",
+"runArgs": [
+		"--name", "esp32-template-project"
+	],
 ```
 
 Then, if other extensions are desired and/or needed, these can be added to the JSON block shown below, which is found in the devcontainer.json file.
