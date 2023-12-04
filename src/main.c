@@ -13,8 +13,30 @@
 #include "esp_flash.h"
 #include "esp_system.h"
 
+int i = 2;
+static int testVar = 20;
+char testChar = 'c';
+
 void app_main(void)
 {
+    int j = 0;
+    while (true)
+    {
+        printf("Hello from ESP32 i: %d j: %d\n", i, j);
+        vTaskDelay(3000 / portTICK_PERIOD_MS);
+        i++;
+        j += 2;
+
+        if (i == 5) {
+            printf("I reached 10 %c", testChar);
+            testVar -= 1;
+            i = 0;
+            testChar = 'a';
+        }
+    }
+    
+
+
     printf("Hello world!\n");
 
     /* Print chip information */

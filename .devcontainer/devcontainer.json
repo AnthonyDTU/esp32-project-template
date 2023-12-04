@@ -3,7 +3,8 @@
 	"build": { "dockerfile": "Dockerfile" },
 	"privileged": true,
 	"runArgs": [
-		"--name", "esp32-template-project"
+		"--name", "esp32-template-project",
+		"-p=3333:3333"
 	],
 	"mounts": [
 		"source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
